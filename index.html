@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Silvia Tomescu | Digital Humanities & Knowledge Graph Specialist</title>
+  <style>
+    :root {
+      --bg: #f3f6fb;
+      --surface: #ffffff;
+      --surface-soft: #f8fbff;
+      --text: #1d2733;
+      --muted: #5f6f82;
+      --line: #d7e1ee;
+      --accent: #1f4e79;
+      --accent-deep: #163a5c;
+      --accent-soft: #eaf2fb;
+      --accent-glow: rgba(31, 78, 121, 0.08);
+      --max: 1040px;
+      --radius: 18px;
+      --shadow: 0 12px 32px rgba(21, 48, 74, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      background:
+        radial-gradient(circle at top left, #edf4fc 0%, transparent 32%),
+        linear-gradient(to bottom, #f6f9fd 0%, #f2f6fb 100%);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 24px 64px;
+    }
+
+    header {
+      background: linear-gradient(135deg, #fafdff 0%, #eef5fc 100%);
+      border-bottom: 1px solid var(--line);
+      padding: 56px 0 30px;
+      margin-bottom: 18px;
+      box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.7);
+    }
+
+    .hero {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .name {
+      margin: 0;
+      font-size: 2.6rem;
+      line-height: 1.15;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      color: var(--accent-deep);
+    }
+
+    .subtitle {
+      margin: 0;
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 760px;
+    }
+
+    .contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 20px;
+      margin-top: 8px;
+      font-size: 0.98rem;
+      color: var(--muted);
+    }
+
+    .contact span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(243, 246, 251, 0.9);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 28px;
+    }
+
+    nav .wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 18px;
+      padding-top: 12px;
+      padding-bottom: 12px;
+    }
+
+    nav a {
+      font-size: 0.95rem;
+      color: var(--accent-deep);
+      padding: 6px 10px;
+      border-radius: 999px;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    nav a:hover {
+      background: var(--accent-soft);
+      text-decoration: none;
+    }
+
+    main {
+      display: grid;
+      gap: 22px;
+    }
+
+    section {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 28px 30px;
+      box-shadow: var(--shadow);
+    }
+
+    h2 {
+      margin: 0 0 16px;
+      font-size: 1.3rem;
+      color: var(--accent-deep);
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 10px;
+      letter-spacing: 0.01em;
+    }
+
+    h3 {
+      margin: 18px 0 8px;
+      font-size: 1.04rem;
+      color: var(--accent-deep);
+    }
+
+    p {
+      margin: 0 0 12px;
+    }
+
+    ul {
+      margin: 10px 0 0 20px;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 12px;
+    }
+
+    .intro {
+      font-size: 1.03rem;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 22px;
+    }
+
+    .taglist {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 6px 12px;
+      border: 1px solid #cfe0f2;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent-deep);
+      font-size: 0.92rem;
+      line-height: 1.2;
+    }
+
+    .item-title {
+      font-weight: 700;
+      color: var(--accent-deep);
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 0.95rem;
+      white-space: nowrap;
+    }
+
+    .compact-list li {
+      margin-bottom: 9px;
+    }
+
+    .publication-list li,
+    .presentation-list li {
+      padding-left: 2px;
+    }
+
+    .contact-box {
+      background: var(--surface-soft);
+    }
+
+    footer {
+      color: var(--muted);
+      font-size: 0.9rem;
+      text-align: center;
+      padding: 8px 0 32px;
+    }
+
+    @media (max-width: 860px) {
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .name {
+        font-size: 2.1rem;
+      }
+
+      section {
+        padding: 24px 20px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .wrap {
+        padding: 0 16px 48px;
+      }
+
+      .name {
+        font-size: 1.8rem;
+      }
+
+      .subtitle {
+        font-size: 1rem;
+      }
+
+      nav .wrap {
+        gap: 8px 10px;
+      }
+
+      nav a {
+        padding: 5px 8px;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <div class="hero">
+        <h1 class="name">Silvia Tomescu</h1>
+        <p class="subtitle">Digital Humanities Researcher &amp; Knowledge Graph Specialist</p>
+        <div class="contact">
+          <span>Email: <a href="mailto:slvtomescu@gmail.com">slvtomescu@gmail.com</a></span>
+          <span>ORCID: <a href="https://orcid.org/0000-0003-1502-8658" target="_blank" rel="noopener">0000-0003-1502-8658</a></span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <div class="wrap">
+      <a href="#profile">About</a>
+      <a href="#expertise">Expertise</a>
+      <a href="#publications">Publications</a>
+      <a href="#presentations">Presentations</a>
+      <a href="#service">Academic Service</a>
+      <a href="#education">Education</a>
+      <a href="#training">Training</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <main class="wrap">
+	<section id="profile">
+	  <h2>About</h2>
+	  <p class="intro">
+		Digital humanities researcher focused on cultural heritage ontologies and knowledge graphs,
+		with expertise in semantic modelling using RDF, OWL, CIDOC CRM, and LRMoo. Emphasis on the
+		structuring, enrichment, and interoperability of cultural and research data.
+	  </p>
+	  <p>
+		Contributions to international conferences and initiatives in digital humanities, digital cultural
+		heritage, and open science. Active peer reviewer for international journals and conferences, and
+		research evaluator involved in the assessment of research proposals within national funding
+		frameworks (UEFISCDI).
+	  </p>
+	</section>
+
+    <section id="expertise">
+      <h2>Expertise</h2>
+      <div class="taglist">
+        <span class="tag">Protégé</span>
+        <span class="tag">OWL</span>
+        <span class="tag">RDF</span>
+        <span class="tag">SPARQL</span>
+        <span class="tag">CIDOC CRM</span>
+        <span class="tag">LRMoo</span>
+        <span class="tag">Dublin Core</span>
+        <span class="tag">Knowledge Graphs</span>
+        <span class="tag">Semantic Web</span>
+        <span class="tag">Open Science</span>
+      </div>
+    </section>
+
+    <section id="publications">
+      <h2>Selected Publications</h2>
+      <ul class="publication-list">
+        <li>
+          Nițu, M.; Rușeți, Ș.; Dascălu, M.; Tomescu, S. (2020).
+          <em>Semantic Recommendations of Books Using Recurrent Neural Networks</em>.
+          In: <em>Ludic, Co-design and Tools Supporting Smart Learning Ecosystems and Smart Education</em>,
+          pp. 235–243. DOI: 10.1007/978-981-15-7383-5_20
+        </li>
+        <li>
+          Mitocaru, I.; Guțu-Robu, G.; Nițu, M.; Dascălu, M.; Trăușan-Matu, Ș.; Tomescu, S.; Florescu, G. (2020).
+          <em>The Lib2Life Platform – Processing, Indexing and Semantic Search for Old Romanian Documents</em>.
+          RoCHI – International Conference on Human-Computer Interaction.
+        </li>
+        <li>
+          Guțu-Robu, G.; Rușeți, Ș.; Tomescu, S.-A.; Dascălu, M.; Trăușan-Matu, Ș. (2020).
+          <em>Designing an Ontology for Knowledge-Based Processing in Romanian University Libraries</em>.
+          In: <em>The 16th International Scientific Conference eLearning and Software for Education</em>.
+          DOI: 10.12753/2066-026X-20-000
+        </li>
+        <li>
+          Nițu, M.; Dascălu, M.; Dascălu, M.-I.; Coteț, T. M.; Tomescu, S. (2019).
+          <em>Reconstructing Scanned Documents for Full-Text Indexing to Empower Digital Library Services</em>.
+          In: <em>Emerging Technologies for Education (SETE 2019)</em>, Springer.
+        </li>
+        <li>
+          Tomescu, S.-A. (2018).
+          <em>Blended Learning Methodology for Library Professionals “Carol I” Central University</em>.
+          <em>eLearning and Software for Education Conference Proceedings</em>.
+        </li>
+      </ul>
+    </section>
+
+    <section id="presentations">
+      <h2>Selected Presentations</h2>
+      <ul class="presentation-list">
+        <li>
+          <span class="item-title">5th DARIAH-HR International Conference, Osijek</span>
+          <span class="meta">(2025)</span><br />
+          <em>Modelling Romanian Intangible Cultural Heritage: A Microontological Approach</em>
+        </li>
+        <li>
+          <span class="item-title">National Library of Lithuania, Vilnius — Acutus et Argutus: Early Modern Print Culture in Motion</span>
+          <span class="meta">(2025)</span><br />
+          <em>The Grammar of Memory: Cultural Ontologies for Early Romanian Printings</em>
+        </li>
+      </ul>
+    </section>
+		<section id="projects">
+		  <h2>Selected Projects</h2>
+		  <ul class="clean">
+			<li>
+			  <span class="term">Lib2Life</span>
+			  <span class="meta">(2018–2021)</span><br />
+			  Smart Search subproject coordinator. Developed domain ontologies and contributed to semantic
+			  search workflows through annotation and correction of digitized texts. Worked on knowledge
+			  organization, semantic modelling, and evaluation of search relevance.
+			  <br />
+			  <a href="https://lib2life.bcub.ro" target="_blank" rel="noopener">Project website</a>
+			</li>
+			<li>
+			  <span class="term">Digitization of "George Bacovia" Manuscripts</span>
+			  <span class="meta">(2006)</span><br />
+			  Project manager for the digitization and structuring of literary archival materials.
+			</li>
+			<li>
+			  <span class="term">Automated Library Collections Management</span>
+			  <span class="meta">(2003–2005)</span><br />
+			  Project manager for the implementation of barcode-based collection management and circulation workflows.
+			</li>
+		  </ul>
+		</section>
+    <section id="service" class="grid-2">
+      <div>
+        <h2>Academic Service</h2>
+        <ul class="compact-list">
+          <li>Peer Reviewer – ADHO (Alliance of Digital Humanities Organizations)</li>
+          <li>Peer Reviewer – DH2026 Conference</li>
+          <li>Peer Reviewer – EADH (European Association for Digital Humanities)</li>
+          <li>Peer Reviewer – IRRODL (International Review of Research in Open and Distributed Learning)</li>
+          <li>Peer Reviewer – eLearning and Software for Education (eLSE)</li>
+          <li>Research Projects Evaluator – UEFISCDI, Romania</li>
+        </ul>
+      </div>
+
+      <div id="education">
+        <h2>Education</h2>
+        <p>
+          <span class="item-title">PhD, University of Bucharest</span><br />
+          <span class="meta">Magna cum laude</span>
+        </p>
+      </div>
+    </section>
+
+    <section id="training">
+      <h2>Selected Advanced Training</h2>
+      <ul class="compact-list">
+        <li>Digital Humanities - University of Oxford<span class="meta">(2025)</span></li>
+        <li>Terminology & Artificial Intelligence  – Université Savoie Mont Blanc <span class="meta">(2024–2025)</span></li>
+        <li>OpenAIRE – Open Science &amp; Research Data Management <span class="meta">(2023)</span></li>
+        <li>Training on Ontology Engineering using the Onto Commons Ecosystem – École Nationale D’Ingénieurs de Tarbes <span class="meta">(2023)</span></li>
+        <li>Data Science Summer School – Hertie School Data Science Lab <span class="meta">(2023)</span></li>
+      </ul>
+    </section>
+    <section id="contact" class="contact-box">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:slvtomescu@gmail.com">slvtomescu@gmail.com</a></p>
+      <p>ORCID: <a href="https://orcid.org/0000-0003-1502-8658" target="_blank" rel="noopener">0000-0003-1502-8658</a></p>
+    </section>
+  </main>
+
+  <footer>
+    &copy; Silvia Tomescu
+  </footer>
+</body>
+</html>
