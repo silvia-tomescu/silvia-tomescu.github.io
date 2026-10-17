@@ -40,15 +40,23 @@ ul{margin:0;padding-left:20px}li{margin:0 0 13px;padding-left:3px}li:last-child{
 footer{font:0.78rem system-ui,sans-serif;color:#6b7787;text-align:center;padding:0 0 35px}
 :focus-visible{outline:2px solid #417bb2;outline-offset:3px}
 @media(max-width:740px){.wrap{padding-left:20px;padding-right:20px}header{padding:42px 0 33px}main.wrap{padding-top:22px}section{padding:26px 22px}#service{grid-template-columns:1fr;gap:22px}#service #education{border-left:0;border-top:1px solid var(--line);padding:22px 0 0}.contact{gap:10px 20px}nav .wrap{gap:9px 18px}}
+/* Portrait positioned at the right edge of the header content */
+header .hero{display:flex;align-items:center;justify-content:space-between;gap:32px}
+header .hero-text{min-width:0}
+header .portrait{width:116px;height:116px;object-fit:cover;border-radius:5px;flex:0 0 116px;display:block}
+@media(max-width:480px){header .hero{gap:14px}header .portrait{width:82px;height:82px;flex-basis:82px}.contact{margin-top:16px}}
 </style></head><body><header>
 <div class="wrap">
 <div class="hero">
+<div class="hero-text">
 <h1 class="name">Silvia Tomescu</h1>
 <p class="subtitle">Digital Humanities Researcher</p>
 <div class="contact">
 <span>Email: <a href="mailto:slvtomescu@gmail.com">slvtomescu@gmail.com</a></span>
 <span>ORCID: <a href="https://orcid.org/0000-0003-1502-8658" rel="noopener" target="_blank">0000-0003-1502-8658</a></span>
 </div>
+</div>
+<img class="portrait" src="portrait.jpg" alt="Portrait of Silvia Tomescu" width="116" height="116" />
 </div>
 </div>
 </header><nav>
